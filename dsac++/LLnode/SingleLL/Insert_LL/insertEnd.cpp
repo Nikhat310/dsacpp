@@ -60,7 +60,7 @@ class SL
 			ptr=head;
 			while(ptr!=NULL){
 				cout<<ptr->data<<"\n";
-				ptr->next=cur;
+				ptr=ptr->next;
 
 				}
 			}
