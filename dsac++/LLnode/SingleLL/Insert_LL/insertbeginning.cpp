@@ -35,7 +35,7 @@ class SL
 				cin>>ch;
 				}
 		}
-		static InsertBeg(int ele){
+		static void InsertBeg(int ele){
 			Node *cur=new Node();
 			cur->data=ele;
 			cur->next=head;

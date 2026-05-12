@@ -28,7 +28,6 @@ class SL
 				if(head == NULL){
 					head = cur;
 				}else{
-					// temp=head;
 					ptr->next=cur;
 					cur->next=head;
 				}
@@ -37,32 +36,26 @@ class SL
 				cin>>ch;
 				}
 		}
-
-		//for circular display
-		// static void disp()
-		// {
-		// 	if(head==NULL)
-		// 	{
-		// 		cout<<"empty list!";
-		// 		return;
-		// 	}
-		// 	Node *ptr;
-		// 	cout<<"elements are: "<<endl;
-		// 	ptr=head;
-		// 	do{
-		// 		cout<<ptr->data;
-		// 	}
-				
-		// 	}
-
-			static void disp()
-			
+		static void InsertBeg(int ele)
 		{
+			Node *cur=new Node();
+			cur->data=ele;
+			cur->next=cur;
 			if(head==NULL)
 			{
-				cout<<"empty list!";
-				return;
+				head=cur;
 			}
+            else
+            {
+            	cur->next=head;
+            	head->next=cur;
+			    head=cur;
+			    cout<<"Inserted New Node in the beginning!"<<ele<<endl;
+            }
+
+		}
+		static void disp()
+		{
 			Node *ptr;
 			cout<<"elements are: "<<endl;
 			ptr=head;
@@ -70,8 +63,7 @@ class SL
 				cout<<ptr->data<<"\n";
 				ptr=ptr->next;
 
-				}while(ptr!=head);
-				// cout<<head->data;
+				}while(ptr->next!=head);
 			}
 };
 Node * SL::head;//static method in class define outside the class in cpp
@@ -79,7 +71,8 @@ int main(){
 	
 	  SL::create();
 	  SL::disp();
-	  // SL::disp1();
-	
+	  SL::InsertBeg(5);
+	  SL::disp();
+	  
 	}
 
