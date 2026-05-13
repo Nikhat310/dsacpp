@@ -36,7 +36,7 @@ class SL
 				cin>>ch;
 				}
 		}
-		static void InsertBeg(int ele)
+		static void InsertEnd(int ele)
 		   {
 			Node *cur=new Node();
 			cur->data=ele;
@@ -49,14 +49,15 @@ class SL
             else
             {
             	Node *ptr=head;
-            	while(ptr->next!=head){
+            	while(ptr->next!=head)
+            	{
                    ptr=ptr->next;
             	}
-            	cur->next=head;
 			    ptr->next=cur;
-			    head=cur;
+            	           cur->next=head;
+			    
 			}
-			    cout<<"Inserted New Node in the beginning: "<<ele<<endl;
+			    cout<<"Inserted New Node in the ending : "<<ele<<endl;
             
 
 		}
@@ -77,7 +78,7 @@ int main(){
 	
 	  SL::create();
 	  SL::disp();
-	  SL::InsertBeg(5);
+	  SL::InsertEnd(5);
 	  SL::disp();
 	  
 	}

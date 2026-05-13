@@ -36,29 +36,31 @@ class SL
 				cin>>ch;
 				}
 		}
-		static void InsertBeg(int ele)
+		static void deleteBeg()
 		   {
-			Node *cur=new Node();
-			cur->data=ele;
-			cur->next=cur;
 			if(head==NULL)
 			{
-				head=cur;
-				cur->next=head;
+				cout<<"list is empty !"<<endl;
+				return;
 			}
-            else
+			    cout<<"Deleted Node in the beginning: "<<head->data<<endl;
+Node *ptr=head;
+            if(head->next==head)
             {
-            	Node *ptr=head;
-            	while(ptr->next!=head){
-                   ptr=ptr->next;
-            	}
-            	cur->next=head;
-			    ptr->next=cur;
-			    head=cur;
-			}
-			    cout<<"Inserted New Node in the beginning: "<<ele<<endl;
-            
 
+            	head=NULL;
+            	cout<<"successfully deleted first node! "<<endl;
+            	return;
+            }else{
+while(ptr->next!=head)
+{
+ptr=ptr->next;
+}
+            
+			    head=head->next;
+			    ptr->next=head;
+			
+			}
 		}
 		static void disp()
 		{
@@ -77,7 +79,7 @@ int main(){
 	
 	  SL::create();
 	  SL::disp();
-	  SL::InsertBeg(5);
+	  SL::deleteBeg();
 	  SL::disp();
 	  
 	}
