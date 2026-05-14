@@ -53,7 +53,7 @@ static void deleteBeg()
 		
 	}
 	
-	cout<<"Deleted Node in the beginning : "<<ele<<endl;
+	cout<<"Deleted Node in the beginning "<<endl;
 
 	   	if(head->next==NULL)
 	   	{

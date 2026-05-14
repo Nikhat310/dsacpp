@@ -49,21 +49,16 @@ static void InsertEnd(int ele)
 			if(head==NULL)
 			{
 				head=cur;
-				cur->next=head;
-				cur->prev=head;
+				return;
 			}
-            else
-            {
-            	Node *ptr=head;
-            	while(ptr->next!=head){
-                   ptr=ptr->next;
-            	}
+           
+            	Node *ptr=head->prev;
             	ptr->next=cur;
             	cur->next=head;
             	cur->prev=ptr;
             	head->prev=cur;
 			   
-			}
+			
 			    cout<<"Inserted New Node in the ending: "<<ele<<endl;
             
 

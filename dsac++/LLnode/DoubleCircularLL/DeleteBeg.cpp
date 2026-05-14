@@ -54,11 +54,8 @@ static void deleteBeg()
                return;
             }
             
-            	Node *ptr=head;
+            	Node *ptr=head->prev;
             	  cout<<"deleted Node in the beginning: "<<head->data<<endl;
-            	while(ptr->next!=head){
-                   ptr=ptr->next;
-            	}
             	head=head->next;
             	ptr->next=head;
             	head->prev=ptr;
@@ -68,7 +65,7 @@ static void deleteBeg()
 		{
 			if(head==NULL)
 			{
-				cout<<"empty list!";
+				cout<<"empty list!"<<endl;
 				return;
 			}
 			Node *ptr=head;
@@ -85,7 +82,7 @@ static void deleteBeg()
 	{
 				if(head==NULL)
 			{
-				cout<<"empty list!";
+				cout<<"empty list!"<<endl;
 				return;
 			}
 		cout<<"elements from backward : "<<endl;

@@ -36,35 +36,41 @@ class SL
 				cin>>ch;
 				}
 		}
-		static void InsertEnd(int ele)
+		static void deleteEnd()
 		   {
-			Node *cur=new Node();
-			cur->data=ele;
-			cur->next=cur;
 			if(head==NULL)
 			{
-				head=cur;
+				cout<<"list is empty !"<<endl;
+				return;
 			}
-            else
-            {
-            	Node *ptr=head;
-            	while(ptr->next!=head)
-            	{
-                   ptr=ptr->next;
-            	}
-			    ptr->next=cur;
-            	           cur->next=head;
-			    
-			}
-			    cout<<"Inserted New Node in the ending : "<<ele<<endl;
-            
 
+
+             if(head->next==head)
+            {
+            	cout<<"successfully deleted Node : "<<head->data<<endl;
+            	head=NULL;
+            	return;
+            }
+
+		Node *ptr=head;
+            
+               while(ptr->next->next!=head)
+                {
+                   ptr=ptr->next;
+                }
+		      cout<<"Deleted Node in the ending: "<<ptr->next->data<<endl;
+            ptr->next=head;
+			
 		}
 		static void disp()
 		{
-			Node *ptr;
+			if(head==NULL)
+			{
+				cout<<"empty list !"<<endl;
+				return;
+			}
+			Node *ptr=head;
 			cout<<"elements are: "<<endl;
-			ptr=head;
 			do{
 				cout<<ptr->data<<"\n";
 				ptr=ptr->next;
@@ -77,8 +83,9 @@ int main(){
 	
 	  SL::create();
 	  SL::disp();
-	  SL::InsertEnd(5);
+	  SL::deleteEnd();
 	  SL::disp();
+
 	  
 	}
 

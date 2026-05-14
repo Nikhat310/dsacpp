@@ -43,30 +43,37 @@ class SL
 				cout<<"list is empty !"<<endl;
 				return;
 			}
-			    cout<<"Deleted Node in the beginning: "<<head->data<<endl;
-Node *ptr=head;
-            if(head->next==head)
-            {
 
+		 cout<<"Deleted Node in the beginning: "<<head->data<<endl;
+
+             if(head->next==head)
+            {
             	head=NULL;
-            	cout<<"successfully deleted first node! "<<endl;
+            	cout<<"Successfully deleted first Node !"<<endl;
             	return;
-            }else{
-while(ptr->next!=head)
-{
-ptr=ptr->next;
-}
+            }
+
+		Node *ptr=head;
+            
+               while(ptr->next!=head)
+                {
+                   ptr=ptr->next;
+                }
             
 			    head=head->next;
 			    ptr->next=head;
 			
-			}
+			
 		}
 		static void disp()
 		{
-			Node *ptr;
+			if(head==NULL)
+			{
+				cout<<"empty list !"<<endl;
+				return;
+			}
+			Node *ptr=head;
 			cout<<"elements are: "<<endl;
-			ptr=head;
 			do{
 				cout<<ptr->data<<"\n";
 				ptr=ptr->next;
@@ -81,6 +88,7 @@ int main(){
 	  SL::disp();
 	  SL::deleteBeg();
 	  SL::disp();
+
 	  
 	}
 

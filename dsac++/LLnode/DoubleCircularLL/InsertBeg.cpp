@@ -49,21 +49,19 @@ static void InsertBeg(int ele)
 			if(head==NULL)
 			{
 				head=cur;
-				cur->next=head;
-				cur->prev=head;
+				return;
+				
 			}
-            else
-            {
-            	Node *ptr=head;
-            	while(ptr->next!=head){
-                   ptr=ptr->next;
-            	}
-            	cur->next=head;
-            	cur->prev=ptr;
-            	head->prev=cur;
+            
+            
+            	Node *ptr=head->prev;
+            	
+            	           cur->next=head;
+            	           cur->prev=ptr;
+            	           head->prev=cur;
 			    ptr->next=cur;
 			    head=cur;
-			}
+			
 			    cout<<"Inserted New Node in the beginning: "<<ele<<endl;
             
 

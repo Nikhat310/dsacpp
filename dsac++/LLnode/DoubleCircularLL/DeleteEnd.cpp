@@ -54,11 +54,8 @@ static void deleteEnd()
                return;
             }
             
-            	Node *ptr=head;
+            	Node *ptr=head->prev->prev;
             	  cout<<"deleted Node in the ending: "<<ptr->next->next->data<<endl;
-            	while(ptr->next->next!=head){
-                   ptr=ptr->next;
-            	}
             	ptr->next->prev=NULL;
             	ptr->next=head;
             	head->prev=ptr;
@@ -69,7 +66,7 @@ static void deleteEnd()
 		{
 			if(head==NULL)
 			{
-				cout<<"empty list!";
+				cout<<"empty list!"<<endl;
 				return;
 			}
 			Node *ptr=head;
@@ -86,7 +83,7 @@ static void deleteEnd()
 	{
 				if(head==NULL)
 			{
-				cout<<"empty list!";
+				cout<<"empty list!"<<endl;
 				return;
 			}
 		cout<<"elements from backward : "<<endl;

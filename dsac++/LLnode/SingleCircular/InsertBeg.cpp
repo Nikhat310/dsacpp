@@ -44,15 +44,16 @@ class SL
 			if(head==NULL)
 			{
 				head=cur;
-				cur->next=head;
+				
 			}
             else
             {
             	Node *ptr=head;
-            	while(ptr->next!=head){
+            	while(ptr->next!=head)
+            	{
                    ptr=ptr->next;
             	}
-            	cur->next=head;
+            	           cur->next=head;
 			    ptr->next=cur;
 			    head=cur;
 			}
