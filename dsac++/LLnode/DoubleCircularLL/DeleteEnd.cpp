@@ -55,7 +55,7 @@ static void deleteEnd()
             }
             
             	Node *ptr=head->prev->prev;
-            	  cout<<"deleted Node in the ending: "<<ptr->next->next->data<<endl;
+            	  cout<<"deleted Node in the ending: "<<head->prev->data<<endl;
             	ptr->next->prev=NULL;
             	ptr->next=head;
             	head->prev=ptr;
