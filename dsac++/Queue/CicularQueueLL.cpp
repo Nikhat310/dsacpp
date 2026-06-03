@@ -60,6 +60,7 @@ public:
 				return;
 			}
 			front=front->next;
+			rear->next=front;
 	}
 
 	void peek()
@@ -81,11 +82,11 @@ public:
 			return;
 		}
 		Node *ptr=front;
-		while(ptr!=front)
+		do
 		{
 			cout<<ptr->data<<endl;
 			ptr=ptr->next;
-		}
+		}while(ptr!=front);
 	}
 
 };
