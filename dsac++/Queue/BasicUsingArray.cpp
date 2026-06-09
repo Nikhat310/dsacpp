@@ -18,7 +18,7 @@ public:
 	{
 		if(rear==max-1)
 		{
-			cout<<"Queue is overflow"<<endl;
+			cout<<"Queue overflow"<<endl;
 			return;
 		}
 		if(front==-1)
@@ -34,7 +34,7 @@ public:
 	{
 		if(front==-1)
 		{
-			cout<<"Queue is underflow"<<endl;
+			cout<<"Queue underflow"<<endl;
 			return;
 		}
 		cout<<"removed element is "<<arr[front]<<endl;

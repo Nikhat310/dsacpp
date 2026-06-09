@@ -106,7 +106,7 @@ string intopre(string s, myStack &st)
         }
         else if (ch == '(')
         {
-            st.Push(ch);
+            st.Push(ch); 
         }
         else if (oper(ch))
         {

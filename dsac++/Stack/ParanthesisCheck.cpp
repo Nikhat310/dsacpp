@@ -3,6 +3,7 @@
 using namespace std;
 
 // ── Stack class (char) ───────────────────────────────
+
 class Stack {
     static const int MAX = 100;
     char arr[MAX];
@@ -33,8 +34,10 @@ public:
 };
 
 // ── ParenthesesChecker class ─────────────────────────
+
 class ParenthesesChecker {
 public:
+    
     bool isMatching(char open, char close) {
         return (open == '(' && close == ')') ||
                (open == '[' && close == ']') ||
@@ -64,6 +67,7 @@ bool isBalanced(string exp) {
 
 
 // ── main ─────────────────────────────────────────────
+
 int main() {
     ParenthesesChecker ob;
     string exp;
